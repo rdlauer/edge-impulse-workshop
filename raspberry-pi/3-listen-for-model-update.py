@@ -140,7 +140,7 @@ def save_file_and_restart(file_contents, file_name):
                     "./edgeimpulse/tflite-model")
 
     # build the .eim file
-    cmd = 'cd edgeimpulse && APP_EIM=1 TARGET_LINUX_ARMV7=1 USE_FULL_TFLITE=1 make -j'
+    cmd = 'cd edgeimpulse && rm -f source/*.o && APP_EIM=1 TARGET_LINUX_ARMV7=1 USE_FULL_TFLITE=1 make -j'
     subprocess.call(cmd, shell=True)
 
     # copy the .eim file from the build directory
